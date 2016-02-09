@@ -19,11 +19,21 @@ libraryDependencies ++= Seq(
   "net.ceedubs" %% "ficus" % "1.1.2",
   "com.adrianhurt" %% "play-bootstrap3" % "0.4.4-P24",
   specs2 % Test,
-  "com.h2database" % "h2" % "1.4.188",
   cache,
   evolutions,
   filters
 )
+
+libraryDependencies ++= Seq(
+  "org.scalikejdbc" %% "scalikejdbc"       % "2.3.4",
+  "com.h2database"  %  "h2"                % "1.4.190",
+  "ch.qos.logback"  %  "logback-classic"   % "1.1.3",
+  "org.mindrot" % "jbcrypt" % "0.3m",
+  "org.scalikejdbc" %% "scalikejdbc-syntax-support-macro" % "2.3.4"
+
+)
+
+
 
 
 

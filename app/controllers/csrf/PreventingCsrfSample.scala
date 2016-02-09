@@ -7,7 +7,7 @@ import play.api.data.Form
 import play.api.data.Forms._
 import play.api.mvc.Controller
 
-trait PreventingCsrfSample extends Controller with TokenValidateElement with AuthElement with AuthConfigImpl {
+class PreventingCsrfSample extends Controller with TokenValidateElement with AuthElement with AuthConfigImpl {
 
   def formWithToken = StackAction(AuthorityKey -> NormalUser, IgnoreTokenValidation -> true) { implicit req =>
     Ok(views.html.csrf.formWithToken())
@@ -27,4 +27,4 @@ trait PreventingCsrfSample extends Controller with TokenValidateElement with Aut
   }
 
 }
-object PreventingCsrfSample extends PreventingCsrfSample
+

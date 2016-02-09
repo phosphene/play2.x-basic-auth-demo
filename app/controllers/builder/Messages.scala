@@ -21,7 +21,7 @@ object TransactionalAction extends ActionBuilder[TransactionalRequest] {
   }
 }
 
-trait Messages extends Controller with AuthActionBuilders with AuthConfigImpl {
+class Messages extends Controller with AuthActionBuilders with AuthConfigImpl {
 
   type AuthTxRequest[+A] = GenericAuthRequest[A, TransactionalRequest]
   final def AuthorizationTxAction(authority: Authority): ActionBuilder[AuthTxRequest] = composeAuthorizationAction(TransactionalAction)(authority)
@@ -58,4 +58,4 @@ trait Messages extends Controller with AuthActionBuilders with AuthConfigImpl {
   }
 
 }
-object Messages extends Messages
+

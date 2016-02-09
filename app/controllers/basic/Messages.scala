@@ -7,7 +7,7 @@ import views.html
 import model.Role._
 import play.twirl.api.Html
 
-trait Messages extends Controller with AuthElement with AuthConfigImpl {
+class Messages extends Controller with AuthElement with AuthConfigImpl {
 
   def main = StackAction(AuthorityKey -> NormalUser) { implicit request =>
     val title = "message main"
@@ -32,4 +32,4 @@ trait Messages extends Controller with AuthElement with AuthConfigImpl {
   protected implicit def template(implicit user: User): String => Html => Html = html.basic.fullTemplate(user)
 
 }
-object Messages extends Messages
+

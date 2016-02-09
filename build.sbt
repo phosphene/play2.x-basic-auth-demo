@@ -20,7 +20,6 @@ libraryDependencies ++= Seq(
   "com.adrianhurt" %% "play-bootstrap3" % "0.4.4-P24",
   specs2 % Test,
   cache,
-  evolutions,
   filters
 )
 
@@ -30,9 +29,11 @@ libraryDependencies ++= Seq(
   "ch.qos.logback"  %  "logback-classic"   % "1.1.3",
   "org.mindrot" % "jbcrypt" % "0.3m",
   "org.scalikejdbc" %% "scalikejdbc-syntax-support-macro" % "2.3.4",
-  "org.scalikejdbc"   %% "scalikejdbc-play-initializer"      % "2.4.0",
-  "org.scalikejdbc"   %% "scalikejdbc-play-dbapi-adapter"    % "2.4.0",
-  "org.scalikejdbc"   %% "scalikejdbc-play-fixture"          % "2.4.0"
+  "org.scalikejdbc"   %% "scalikejdbc-play-initializer"      % "2.4.3",
+  "org.scalikejdbc"   %% "scalikejdbc-play-dbapi-adapter"    % "2.4.3",
+  "org.scalikejdbc"   %% "scalikejdbc-play-fixture"          % "2.4.3",
+  "org.scalikejdbc" %% "scalikejdbc-config"           % "2.3.4",
+  "org.scalikejdbc" %% "scalikejdbc-play-initializer" % "2.4.3"
 )
 
 
@@ -45,9 +46,7 @@ libraryDependencies ++= Seq(
   "org.scalactic" %% "scalactic" % "2.2.6",
   "org.scalatest" %% "scalatest" % "2.2.6" % "test",
   "org.scalatestplus" %% "play" % "1.4.0-M4" % "test",
-  "com.typesafe.play" %% "play-slick" % "1.1.1",
-  "com.typesafe.play" %% "play-slick-evolutions" % "1.1.1",
-   "org.flywaydb"      %% "flyway-play" % "2.0.1",
+  "org.flywaydb"      %% "flyway-play" % "2.0.1",
   "jp.t2v" %% "play2-auth"        % "0.14.1",
   "jp.t2v" %% "play2-auth-test"   % "0.14.1" % "test",
   play.sbt.Play.autoImport.cache // only when you use default IdContainer

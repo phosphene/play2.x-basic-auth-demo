@@ -6,7 +6,7 @@ import play.api.mvc.Controller
 import views.html
 import model.Role._
 
-trait Messages extends Controller with Pjax with AuthElement with AuthConfigImpl {
+class Messages extends Controller with Pjax with AuthElement with AuthConfigImpl {
 
   def main = StackAction(AuthorityKey -> NormalUser) { implicit request =>
     val title = "message main"
@@ -31,4 +31,4 @@ trait Messages extends Controller with Pjax with AuthElement with AuthConfigImpl
   protected val fullTemplate: User => Template = html.stateless.fullTemplate.apply
 
 }
-object Messages extends Messages
+

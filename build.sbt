@@ -26,13 +26,18 @@ libraryDependencies ++= Seq(
 )
 
 
+
 libraryDependencies ++= Seq(
   "org.scalactic" %% "scalactic" % "2.2.6",
   "org.scalatest" %% "scalatest" % "2.2.6" % "test",
   "org.scalatestplus" %% "play" % "1.4.0-M4" % "test",
   "com.typesafe.play" %% "play-slick" % "1.1.1",
-  "com.typesafe.play" %% "play-slick-evolutions" % "1.1.1"
-  )
+  "com.typesafe.play" %% "play-slick-evolutions" % "1.1.1",
+  "jp.t2v" %% "play2-auth"        % "0.14.1",
+  "jp.t2v" %% "play2-auth-test"   % "0.14.1" % "test",
+  play.sbt.Play.autoImport.cache // only when you use default IdContainer
+
+)
 
 libraryDependencies += "com.codeborne" % "phantomjsdriver" % "1.2.1" % "test"
 //libraryDependencies += "org.yaml" % "snakeyaml" % "1.16" % "test"

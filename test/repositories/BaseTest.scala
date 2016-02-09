@@ -68,11 +68,12 @@ trait BasePlayTest
   import unicorn.driver.api._
 
   override protected def beforeEach(data: TestData): Unit = {
-    DB.run(sqlu"""DROP ALL OBJECTS""")
+    
     super.beforeEach()
   }
 
   override protected def afterAll(): Unit = {
+    DB.run(sqlu"""DROP ALL OBJECTS""")
     Play.stop(app)
     super.afterEach()
   }

@@ -9,7 +9,6 @@ import play.api.test.TestServer
 import play.api.test.Helpers._
 
 import play.api.Play
-
 import model.Account
 
 
@@ -54,7 +53,7 @@ class UserSignInFeatureSpec extends FeatureSpec with GivenWhenThen with BeforeAn
       browser.pageSource should include("Sign in")
     }
 
-    scenario("I want to sign in") {
+    scenario("I want to sign in as a credentialed user") {
 
       Given("I have correct credentials")
 
@@ -69,7 +68,20 @@ class UserSignInFeatureSpec extends FeatureSpec with GivenWhenThen with BeforeAn
       browser.pageSource should not include ("Sign in")
       browser.pageSource should include ("logout")
       browser.getCookie("PLAY2AUTH_SESS_ID").getExpiry should not be (null)
+    }
 
+    scenario("I want to sign in as a non-credentialed user") {
+
+      Given("I do not have correct credentials")
+
+      When("I attempt to sign in")
+      browser.goTo("http://localhost:3333/")
+      browser.$("#email").text("alice@example.com")
+      browser.$("#password").text("secretxxx")
+      browser.$("#loginbutton").click()
+
+      Then("I should be denied")
+      browser.pageSource should include("Invalid email or password")
     }
   }
 }
